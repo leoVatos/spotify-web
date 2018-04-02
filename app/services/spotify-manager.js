@@ -6,7 +6,7 @@ const URL_SPOTIFY_API = 'https://api.spotify.com/v1/search';
 class SpotifyManager {
 
   constructor () {
-    this.accessToken = 'BQBdIQKQ1naQtNSSiGMPtqGkjycLTyV7nw8DUyim5nEK6Z3As-NEekQosA0cgJDSNjUSWoIB6DjkW-iNrrtQP6xj7Mq3fPs6OgWdtMWfxWGb0IcTXo03ez2fzudMXE4ellO9eZl9jFSf9edJ4v_iV-9CAsiA9p0';
+    this.accessToken = 'BQAvlW2EaUsIHYATQAItQKCsGXWeRC9VCrYU6O6Z-0dbsFpZQJyZQmkU87VG3YsH_GNZPDpeO6rAW6UTVJ2EKR7GeBHG6mcqLPtMJDpwpA63ShN5xQmZWixYaUOHlUdxfrbI6ESe0nqiAzfaUdzXm7NiQa9JUA8';
     this.lastTokenUpdate = null;
   }
 
@@ -29,17 +29,21 @@ class SpotifyManager {
   }
 
   searchArtists (name) {
-    const params = `?q=${name}&type=artist&limit=50`;
-    axios.get(URL_SPOTIFY_API + params, {
-      headers: {
-        'Authorization': `Bearer ${this.accessToken}`
-      }
-    }).then((response) => {
-      console.log('response', response);
-      console.log('data', response.data);
-    },
-    err => {
-      console.log(err);
+    return new Promise((resolve, reject) => {
+      const params = `?q=${name}&type=artist&limit=50`;
+      axios.get(URL_SPOTIFY_API + params, {
+        headers: {
+          'Authorization': `Bearer ${this.accessToken}`
+        }
+      }).then((response) => {
+        console.log('response', response);
+        console.log('data', response.data);
+        resolve(response.data);
+      },
+      err => {
+        console.log(err);
+        reject(err);
+      });
     });
   }
 

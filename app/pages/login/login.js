@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import SpotifyManager from '../services/spotify-manager';
+import SpotifyManager from '../../services/spotify-manager';
 
 const REDIRECT_URL = 'http://localhost:3000/login';
 

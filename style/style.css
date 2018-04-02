@@ -1,15 +1,21 @@
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+#app-container{
+  height: 100%;
+}
+
 .flex{
-  display: flex;
+display: flex;
 }
 
 .flex-row{
-  flex-direction: row;
+flex-direction: row;
 }
 
 .flex-column{
-  flex-direction: column;
+flex-direction: column;
 }
 
-.app-container{
-
-}

@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 //Components
-import Home from './pages/home';
-import Login from './pages/login';
+import Home from './pages/home/home';
+import Login from './pages/login/login';
 
 ReactDOM.render((
   <BrowserRouter>
