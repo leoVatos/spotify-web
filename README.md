@@ -1,2 +1,3 @@
-# spotify-web
-Web app to search spotify artists
+# react-simple-starter
+
+Forked from: https://github.com/StephenGrider/ReduxSimpleStarter
