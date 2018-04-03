@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import s from './search.css';
+import style from './search.css';
 
 class Search extends Component {
 
@@ -19,10 +19,18 @@ class Search extends Component {
     });
   }
 
+  handleKeyPress (ev) {
+    if (ev.keyCode === 13) {
+      this.props.onSearchClick(this.state.searchText);
+    }
+  }
+
   render() {
-    return <div className={s.searchContainer}>
-      <input type='search' placeholder={this.props.placeholder} onChange={ev => (this.handleSearchChanges(ev))}/>
-      <button disabled={this.state.searchText.trim().length === 0} onClick={() => (this.props.onSearchClick(this.state.searchText))}>Search</button>
+    return <div className={style.searchContainer}>
+      <input onKeyDown={(ev) => this.handleKeyPress(ev)} className={style.input} type='search' placeholder={this.props.placeholder} onChange={ev => (this.handleSearchChanges(ev))}/>
+      <button type="button" className={style.btnSearch} disabled={this.state.searchText.trim().length === 0} onClick={() => (this.props.onSearchClick(this.state.searchText))}>
+        <i className="fas fa-search fa-3x"></i>
+      </button>
     </div>;
   }
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import s from './grid.css';
 
@@ -17,6 +17,7 @@ class Grid extends Component {
 }
 
 Grid.propTypes = {
+  theme: PropTypes.string
 };
 
 export default Grid;

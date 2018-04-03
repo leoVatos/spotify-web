@@ -3,4 +3,6 @@
   flex-wrap: wrap;
   flex-flow: wrap;
   justify-content: center;
+  background-color: rgb(24, 24, 24);
+  padding-bottom: 16px;
 }

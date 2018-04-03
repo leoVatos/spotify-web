@@ -6,7 +6,7 @@
   margin: 10px;
   border: 1px solid gray;
   padding: 10px;
-
+  box-shadow: 1px 1px 5px darkgrey;
   cursor: pointer;
 }
 
@@ -17,8 +17,10 @@
 }
 
 .name{
+  display: flex;
+  align-self: center;
   font-size: 24px;
   font-weight: 700;
-  padding-left: 8px;
+  padding-left: 16px;
   padding-right: 8px;
 }

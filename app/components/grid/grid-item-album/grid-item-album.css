@@ -1,0 +1,71 @@
+.container{
+  display: flex;
+  width: 300px;
+  min-height: 405px;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  cursor: pointer;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px darkgrey;
+  color: white;
+}
+
+.container img{
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.name{
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.starsWrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+.stars{
+  display: flex;
+  flex-grow: 1;
+  text-align: center;
+  color: #CCCC00;
+}
+
+.releaseDate{
+  text-align: center;
+  font-weight: bold;
+  color: gray;
+  margin-top: 8px;
+}
+
+.genre{
+
+}
+
+.collapseDiv{
+  /*display: none;*/
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+.trackList ol{
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.trackList ol li{
+  padding-top: 8px;
+}
+
+.listTitle{
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-weight: bold;
+}

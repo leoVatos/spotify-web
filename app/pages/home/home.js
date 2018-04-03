@@ -5,7 +5,7 @@ import SpotifyManager from '../../services/spotify-manager';
 
 import style from './home.css';
 import Grid from '../../components/grid/grid';
-import GridItem from '../../components/grid/grid-item/grid-item';
+import GridItemArtist from '../../components/grid/grid-item-artist/grid-item-artist';
 
 export default class Home extends Component {
 
@@ -19,6 +19,7 @@ export default class Home extends Component {
 
   handleGridItemClick (item) {
     console.log(item);
+    this.props.history.push('/artist/' + item.id);
   }
 
   handleSearchClick (value) {
@@ -46,7 +47,7 @@ export default class Home extends Component {
         <Grid>
           {
             this.state.artists && this.state.artists.map(item => {
-              return <GridItem onItemClick={this.handleGridItemClick} key={item.id} item={item} />;
+              return <GridItemArtist cssClasses={style.gridItem} onItemClick={ (item) => this.handleGridItemClick(item) } key={item.id} item={item} />;
             })
           }
         </Grid>
