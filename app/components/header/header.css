@@ -1,6 +1,30 @@
 
 .header {
+  position: relative;
   background-color: green;
   color: #fff;
   height: 70px;
+  text-align: center;
+}
+
+.title{
+  margin: 0;
+  padding-top: 13px;
+}
+
+.btnWrapper{
+  float: left;
+  height: 100%;
+}
+
+.btnWrapper button{
+  height: 60%;
+  width: 80px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 12px;
+  border-radius: 25px;
+  background-color: transparent;
+  margin-left: 8px;
+  color: white;
 }
