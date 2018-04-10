@@ -2,14 +2,15 @@ import axios from 'axios';
 import _ from 'lodash';
 
 const CLIENT_ID = 'd610077e02d64665beb608422e1f8aef';
-const URL_SPOTIFY_API = 'https://api.spotify.com/v1/search';
-const URL_SPOTIFY_ALBUMS = 'https://api.spotify.com/v1/artists/{id}/albums';
-const URL_SPOTIFY_GET_ALBUM = 'https://api.spotify.com/v1/albums/';
+const URL_SPOTIFY_API = 'https://api.spotify.com/v1';
+const URL_SPOTIFY_API_SEARCH = URL_SPOTIFY_API + '/search';
+const URL_SPOTIFY_ALBUMS = URL_SPOTIFY_API + '/artists/{id}/albums';
+const URL_SPOTIFY_GET_ALBUM = URL_SPOTIFY_API + '/albums/';
 
 class SpotifyManager {
 
   constructor () {
-    this.accessToken = 'BQBtu3y5gChH_eM0ph8yesXFPpjDhfCEqVTJ7xfs3O09-W4y2kfYbWqofFKO4lcG26NH8xIqsHohlSz4nVH8e7VzJl3THO_srKa0PboX9EhQc58ZKfRVufEdGk4ELwnRIAWCqkgmhVJOswRxkDy1ir8-Kv5i3js';
+    this.accessToken = window.localStorage.getItem('token');
     this.lastTokenUpdate = null;
   }
 
@@ -29,12 +30,13 @@ class SpotifyManager {
   setAccessToken (token) {
     this.accessToken = token;
     this.lastTokenUpdate = new Date();
+    window.localStorage.setItem('token', token);
   }
 
   searchArtists (name) {
     return new Promise((resolve, reject) => {
-      const params = `?q=${name}&type=artist&limit=50`;
-      axios.get(URL_SPOTIFY_API + params, {
+      let params = `?q=${name}&type=artist&limit=50`;
+      axios.get(URL_SPOTIFY_API_SEARCH + params, {
         headers: {
           'Authorization': `Bearer ${this.accessToken}`
         }
