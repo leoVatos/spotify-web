@@ -1,0 +1,13 @@
+.container{
+  width: 100%;
+  text-align: center;
+}
+
+.loginButton{
+  width: 200px;
+  height: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 50px;
+}

@@ -4,6 +4,10 @@ import SpotifyManager from '../../services/spotify-manager';
 
 const REDIRECT_URL = 'http://localhost:3000/login';
 
+import Header from '../../components/header/header';
+
+import style from './login.css';
+
 export default class Login extends Component {
 
   constructor(props) {
@@ -37,8 +41,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={() => { this.handleLoginSpotify(); }}>Login with Spotify</button>
+      <div className={style.container}>
+        <Header title='Spotify Clone'></Header>
+        <button className={style.loginButton} onClick={() => { this.handleLoginSpotify(); }}>Login with Spotify</button>
       </div>
     );
   }
