@@ -1,3 +1,7 @@
-# react-simple-starter
+# Simple web application using React and Spotify API
 
-Forked from: https://github.com/StephenGrider/ReduxSimpleStarter
+Steps:
+
+- clone the repo
+- npm install
+- npm start
