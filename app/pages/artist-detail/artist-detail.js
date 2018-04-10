@@ -22,14 +22,9 @@ export default class ArtistDetail extends Component {
     album.expanded = !album.expanded;
     if (album.expanded) {
       SpotifyManager.getAlbumById(album.id).then(data => {
-        // console.log(data);
-        // console.log(album);
         album.popularity = (data.popularity / 2) / 10;
         album.genres = data.genres;
         album.tracks = data.tracks;
-        // this.setState(prevState => {
-        //   return {...prevState, albums: data.items};
-        // });
         this.forceUpdate();
       },
       err => {
@@ -55,7 +50,7 @@ export default class ArtistDetail extends Component {
   render() {
     return (
       <div className={style.container}>
-        <Header title='Spotify test'/>
+        <Header title='Spotify test' enableBack={true}/>
         <Grid theme='dark'>
           {
             this.state.albums && this.state.albums.map(item => (
