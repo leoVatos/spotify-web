@@ -17,6 +17,10 @@ export default class Home extends Component {
     };
   }
 
+  componentDidMount() {
+    this.handleSearchClick();
+  }
+
   handleGridItemClick (item) {
     console.log(item);
     this.props.history.push('/artist/' + item.id);
@@ -33,16 +37,21 @@ export default class Home extends Component {
     },
     err => {
       console.log(err);
+      console.log('Code', err.response.status);
+      if (err.response.status === 401) {
+        SpotifyManager.setAccessToken(null);
+        this.props.history.push('login');
+      }
     });
   }
 
   render() {
     return (
       <div className={style.container}>
-        <Header title='Spotify test'/>
+        <Header title='Spotify clone'/>
         <Search
           onSearchClick={(value) => (this.handleSearchClick(value))}
-          placeholder='Digite o nome do artista'
+          placeholder='Search for an artist'
         />
         <Grid>
           {
